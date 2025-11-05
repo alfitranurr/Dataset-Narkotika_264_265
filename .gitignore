@@ -1,0 +1,10 @@
+# Ignore logs folder dan isinya
+logs/
+
+# Ignore Jupyter notebooks (termasuk SCRAPER.ipynb)
+*.ipynb
+
+# Ignore file sementara lain
+*.log
+.DS_Store
+__pycache__/
