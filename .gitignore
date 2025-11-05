@@ -1,10 +1,15 @@
+cat > .gitignore << EOF
 # Ignore logs folder dan isinya
 logs/
 
 # Ignore Jupyter notebooks (termasuk SCRAPER.ipynb)
 *.ipynb
 
+# Ignore folder Narkotika di dalam Dataset (supaya cuma ZIP yang ke-add)
+Dataset/Narkotika/
+
 # Ignore file sementara lain
 *.log
 .DS_Store
 __pycache__/
+EOF
