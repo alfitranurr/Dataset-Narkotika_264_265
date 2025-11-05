@@ -3,7 +3,7 @@
 ## Deskripsi Dataset
 Dataset ini merupakan kumpulan 50 dokumen putusan pengadilan dari Pengadilan Negeri (PN) Sidoarjo dalam kategori **Pidana Khusus** dengan klasifikasi **Narkotika dan Psikotropika**. Dataset dikumpulkan sebagai bagian dari tugas mata kuliah **Temu Kembali Informasi (TKI)** untuk mendukung analisis, penelitian, dan pengembangan model TKI berbasis dokumen hukum terbuka.
 
-Dokumen putusan ini bersifat publik dan tidak terikat Hak atas Kekayaan Intelektual (HaKI), sesuai dengan kebijakan Direktori Putusan Mahkamah Agung Republik Indonesia. Dataset difokuskan pada putusan tahun **2023-2025** dan **tidak termasuk** putusan dengan status **Berkuat Hukum Tetap** untuk memastikan relevansi dan kelengkapan data untuk tujuan analisis.
+Dokumen putusan ini bersifat publik dan tidak terikat Hak atas Kekayaan Intelektual (HaKI), sesuai dengan kebijakan Direktori Putusan Mahkamah Agung Republik Indonesia. Dataset difokuskan pada putusan tahun **2023-2025** dan **tidak termasuk** putusan dengan status **Berkekuatan Hukum Tetap** untuk memastikan relevansi dan kelengkapan data untuk tujuan analisis.
 
 - **Jumlah Dokumen**: 50 putusan (dalam format PDF)
 - **Sumber**: Direktori Putusan Mahkamah Agung RI (https://putusan3.mahkamahagung.go.id)
@@ -24,7 +24,7 @@ Dataset-Narkotika_264_265/
 │   └── Narkotika.zip          # Arsip 50 file PDF putusan (ekstrak untuk akses individu)
 ├── Overview/
 │   └── Overview.xlsx          # Summary metadata 50 putusan (format Excel)
-└── README.md                  # Dokumen ini
+└── README.md                  
 ```
 
 - **Narkotika.zip**: Berisi 50 file PDF PN SIDOARJO > Pidana Khusus > Narkotika dan Psikotropika. Ekstrak ZIP untuk mengakses file individu.
@@ -42,7 +42,7 @@ File Excel memiliki struktur kolom sederhana sebagai berikut:
 
 - **No**: Nomor urut otomatis (1-50).
 - **No Putusan**: Nomor resmi putusan (e.g., 622/Pid.Sus/2025/PN Sda).
-- **Lembaga Peradilan**: Selalu "PN SIDOARJO" untuk konsistensi.
+- **Lembaga Peradilan**: PN SIDOARJO.
 - **Barang Bukti**: Deskripsi barang bukti narkotika (e.g., sabu, alat bantu) yang diekstrak dari "Catatan Amar".
 - **Amar Putusan**: Teks lengkap amar putusan dari "Catatan Amar", mencakup vonis, biaya, dan instruksi (e.g., pemusnahan barang bukti).
 
