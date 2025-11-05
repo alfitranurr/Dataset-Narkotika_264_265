@@ -9,47 +9,25 @@ Dokumen putusan ini bersifat publik dan tidak terikat Hak atas Kekayaan Intelekt
 - **Sumber**: Direktori Putusan Mahkamah Agung RI (https://putusan3.mahkamahagung.go.id)
 - **Klasifikasi**: Pidana Khusus > Narkotika dan Psikotropika
 - **Pengadilan**: PN Sidoarjo (unik antar kelompok, terdaftar di grup WA kelas TKI)
-- **Ukuran Dataset**: ~50 MB (setelah kompresi ZIP)
+- **Ukuran Dataset**: ~71 MB (setelah kompresi ZIP)
 
 Dataset ini dapat digunakan untuk:
 - Ekstraksi informasi otomatis (e.g., entitas bernama, relasi barang bukti).
 - Pelatihan model machine learning untuk retrieval informasi hukum.
 - Analisis tren kasus narkotika di PN Sidoarjo.
 
-## Cara Pengumpulan Data
-Data dikumpulkan secara otomatis menggunakan script Python scraper yang disesuaikan dengan situs Direktori Putusan. Script ini:
-1. Mencari putusan berdasarkan query: "Pidana Khusus" dengan filter PN Sidoarjo, tahun 2023-2025, dan kategori Narkotika.
-2. Mengekstrak link PDF dari setiap halaman hasil pencarian (maksimal 50 dokumen).
-3. Mengunduh PDF dan memvalidasi nama file (hanya yang mengandung "pn_sda" untuk memastikan relevansi).
-4. Mengekstrak metadata dari halaman putusan, termasuk:
-   - Nomor Putusan.
-   - Lembaga Peradilan.
-   - Barang Bukti (diekstrak dari bagian "Catatan Amar" menggunakan regex untuk frasa seperti "barang bukti berupa").
-   - Amar Putusan (teks lengkap dari "Catatan Amar").
-5. Menyimpan metadata ke file Excel dan mengompresi PDF ke ZIP.
-
-Script scraper tersedia di repository ini (lihat folder `scripts/` jika di-upload). Contoh query pencarian:
-```
-https://putusan3.mahkamahagung.go.id/search.html?q=Pidana%20Khusus&jenis_doc=&cat=3c40e48bbab311301a21c445b3c7fe57&jd=&tp=&court=098167PN337&t_put=&t_reg=&t_upl=&t_pr=
-```
-- **Batasan**: Script dibatasi pada 50 file untuk memenuhi ketentuan tugas. Logging disimpan di `logs/scraper_narkotika.log` untuk tracking error.
-
 ## Struktur Direktori
 Repository ini mengikuti struktur direktori sebagai berikut:
 ```
-PN-Sidoarjo-Narkotika/
+Dataset-Narkotika_264_265/
 ├── Dataset/
 │   └── Narkotika.zip          # Arsip 50 file PDF putusan (ekstrak untuk akses individu)
 ├── Overview/
 │   └── Overview.xlsx          # Summary metadata 50 putusan (format Excel)
-├── scripts/                   # (Opsional) Script scraper Python
-│   └── scraper.py
-├── logs/                      # (Opsional) Log proses scraping
-│   └── scraper_narkotika.log
 └── README.md                  # Dokumen ini
 ```
 
-- **Narkotika.zip**: Berisi 50 file PDF bernama format `{nomor_putusan}_NarkotikaPsikotropika_{YYYY-MM-DD}.pdf`. Ekstrak ZIP untuk mengakses file individu.
+- **Narkotika.zip**: Berisi 50 file PDF PN SIDOARJO > Pidana Khusus > Narkotika dan Psikotropika. Ekstrak ZIP untuk mengakses file individu.
 - **Overview.xlsx**: File Excel dengan sheet "Overview" berisi ringkasan data.
 
 ## Deskripsi Kolom Overview.xlsx
@@ -65,7 +43,7 @@ File Excel memiliki struktur kolom sederhana sebagai berikut:
 - **No**: Nomor urut otomatis (1-50).
 - **No Putusan**: Nomor resmi putusan (e.g., 622/Pid.Sus/2025/PN Sda).
 - **Lembaga Peradilan**: Selalu "PN SIDOARJO" untuk konsistensi.
-- **Barang Bukti**: Deskripsi barang bukti narkotika (e.g., sabu, alat bantu) yang diekstrak dari "Catatan Amar". Jika tidak ditemukan, kosong.
+- **Barang Bukti**: Deskripsi barang bukti narkotika (e.g., sabu, alat bantu) yang diekstrak dari "Catatan Amar".
 - **Amar Putusan**: Teks lengkap amar putusan dari "Catatan Amar", mencakup vonis, biaya, dan instruksi (e.g., pemusnahan barang bukti).
 
 ## Contoh Penggunaan
@@ -82,9 +60,8 @@ Untuk memproses dataset:
 ## Lisensi dan Catatan
 - **Lisensi**: Public Domain (data asli dari situs pemerintah RI, bebas digunakan untuk tujuan non-komersial/pendidikan).
 - **Catatan**:
-  - Data dikumpulkan pada November 2025; verifikasi ulang untuk update.
-  - Potensi inkonsistensi ekstraksi (e.g., regex untuk "barang bukti" mungkin tidak sempurna untuk variasi teks).
-  - Hubungi pemilik repository untuk pertanyaan: [email atau GitHub username].
-  - Sumber lengkap: https://putusan3.mahkamahagung.go.id (link asli per putusan tersimpan di log scraper).
+  - Data dikumpulkan pada November 2025.
+  - Hubungi pemilik repository untuk pertanyaan: [alfitranurr@gmail.com].
+  - Sumber lengkap: https://putusan3.mahkamahagung.go.id.
 
-Terima kasih atas kunjungan! Dataset ini dibuat oleh [Nama Kelompok/Anggota, e.g., Kelompok 1: John Doe & Jane Smith].
+Terima kasih atas kunjungan! Dataset ini dibuat oleh [Al Fitra Nur Ramadhani (202210370311264)& Muhammad Hanif (202210370311265)].
