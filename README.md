@@ -64,4 +64,4 @@ Untuk memproses dataset:
   - Hubungi pemilik repository untuk pertanyaan: [alfitranurr@gmail.com].
   - Sumber lengkap: https://putusan3.mahkamahagung.go.id.
 
-Terima kasih atas kunjungan! Dataset ini dibuat oleh [Al Fitra Nur Ramadhani (202210370311264)& Muhammad Hanif (202210370311265)].
+Terima kasih atas kunjungan! Dataset ini dibuat oleh [Al Fitra Nur Ramadhani (202210370311264) & Muhammad Hanif (202210370311265)].
